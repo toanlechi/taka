@@ -28,10 +28,6 @@ public class Services {
         return icon;
     }
 
-    public void setIcon(int icon) {
-        this.icon = icon;
-    }
-
     public String getName() {
         return name;
     }

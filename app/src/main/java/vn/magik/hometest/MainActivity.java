@@ -9,8 +9,6 @@ import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import org.json.JSONObject;
-
 import java.util.List;
 
 import vn.magik.hometest.adapters.CategoryAdapter;
@@ -25,7 +23,6 @@ import vn.magik.hometest.helpers.CreateDataHelper;
  * Home screen.
  */
 public class MainActivity extends AppCompatActivity {
-
     /**
      * All recycle_view in view.
      */
@@ -34,6 +31,9 @@ public class MainActivity extends AppCompatActivity {
      * Progress loading keyword.
      */
     private ProgressBar progressBarLoadKeyword;
+    /**
+     * Text show status load data.
+     */
     private TextView textViewStatusLoadKeyword;
 
     @Override
@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
                 mRecyclerViewKeyHot.setVisibility(View.VISIBLE);
 
                 // List keyword from server
-                List<String> keywordList =  CalculatorTextHelper.convertJSONToListKeyword(object);
+                List<String> keywordList = CalculatorTextHelper.convertJSONToListKeyword(object);
 
                 // Set data into recycler_view
                 KeyHotAdapter keyHotAdapter = new KeyHotAdapter(MainActivity.this,

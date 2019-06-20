@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".MainActivity"
-    android:background="@color/colorBackground">
+    android:background="@color/colorBackground"
+    tools:context=".MainActivity">
 
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -20,6 +21,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@android:color/white">
+
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/recycler_view_category"
                     android:layout_width="match_parent"
@@ -31,19 +33,20 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
                 android:layout_marginTop="@dimen/margin_item_recycler_view"
                 android:background="@android:color/holo_blue_dark"
+                android:orientation="vertical"
                 android:paddingTop="@dimen/padding_default"
                 android:paddingBottom="@dimen/padding_default">
+
                 <TextView
+                    style="@style/title_card_black"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/service_title"
-                    android:textColor="#fff"
-                    android:layout_marginRight="@dimen/padding_default"
                     android:layout_marginLeft="@dimen/padding_default"
-                    style="@style/title_card_black"/>
+                    android:layout_marginRight="@dimen/padding_default"
+                    android:text="@string/service_title"
+                    android:textColor="#fff" />
 
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/recycler_view_services"
@@ -52,7 +55,7 @@
                     android:layout_marginTop="@dimen/margin_title"
                     android:background="?attr/selectableItemBackground"
                     android:clickable="true"
-                    android:focusable="true"/>
+                    android:focusable="true" />
 
             </LinearLayout>
 
@@ -60,42 +63,45 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:layout_marginTop="@dimen/margin_item_recycler_view"
-                android:padding="@dimen/padding_default"
                 android:background="@android:color/white"
-                android:gravity="center"
                 android:clickable="true"
-                android:focusable="true">
+                android:focusable="true"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="@dimen/padding_default">
+
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:src="@drawable/ic_tag"/>
+                    android:src="@drawable/ic_tag" />
 
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
                     android:layout_marginLeft="@dimen/padding_default"
                     android:layout_marginRight="@dimen/padding_default"
-                    android:gravity="center">
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/title_card_white"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/bank_title" />
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/bank_title"
-                        style="@style/title_card_white"/>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/bank_detail"/>
+                        android:text="@string/bank_detail" />
                 </LinearLayout>
 
                 <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_chevron_right_black_24dp"
-                    android:background="?attr/selectableItemBackgroundBorderless"/>
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/ic_chevron_right_black_24dp" />
 
             </LinearLayout>
 
@@ -103,18 +109,19 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
                 android:layout_marginTop="@dimen/margin_item_recycler_view"
+                android:background="@android:color/white"
+                android:orientation="vertical"
                 android:paddingTop="@dimen/padding_default"
-                android:paddingBottom="@dimen/padding_default"
-                android:background="@android:color/white">
+                android:paddingBottom="@dimen/padding_default">
+
                 <TextView
+                    style="@style/title_card_white"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/hot_title"
                     android:layout_marginLeft="@dimen/padding_default"
                     android:layout_marginRight="@dimen/padding_default"
-                    style="@style/title_card_white"/>
+                    android:text="@string/hot_title" />
 
                 <TextView
                     android:id="@+id/txt_status_loading"
@@ -123,21 +130,21 @@
                     android:gravity="center"
                     android:textSize="12sp"
                     android:textStyle="italic"
-                    android:visibility="gone"/>
+                    android:visibility="gone" />
 
                 <ProgressBar
                     android:id="@+id/progress_load_keyword"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:visibility="visible"
-                    android:layout_gravity="center"/>
+                    android:layout_gravity="center"
+                    android:visibility="visible" />
 
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/recycler_view_key_hot"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:visibility="gone"
-                    android:layout_marginTop="@dimen/margin_title"/>
+                    android:layout_marginTop="@dimen/margin_title"
+                    android:visibility="gone" />
 
             </LinearLayout>
 
@@ -145,47 +152,49 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="116dp"
-                android:orientation="horizontal"
                 android:layout_marginTop="@dimen/margin_item_recycler_view"
-                android:padding="@dimen/padding_default"
                 android:background="@android:color/white"
-                android:gravity="center">
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="@dimen/padding_default">
 
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:orientation="vertical">
+
                     <TextView
+                        style="@style/title_card_white"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/user_title"
-                        style="@style/title_card_white"/>
+                        android:text="@string/user_title" />
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_marginTop="@dimen/padding_default">
+                        android:layout_marginTop="@dimen/padding_default"
+                        android:orientation="horizontal">
 
                         <Button
+                            style="@style/Widget.AppCompat.Button.Colored"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/user_login"
-                            style="@style/Widget.AppCompat.Button.Colored"
-                            app:backgroundTint="@color/colorPrimary"/>
+                            app:backgroundTint="@color/colorPrimary" />
 
                         <Button
+                            style="@style/Widget.AppCompat.Button.Colored"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/user_register"
-                            style="@style/Widget.AppCompat.Button.Colored"/>
+                            android:text="@string/user_register" />
                     </LinearLayout>
                 </LinearLayout>
 
                 <ImageView
                     android:layout_width="60dp"
                     android:layout_height="60dp"
-                    android:src="@drawable/ic_cart"/>
+                    android:src="@drawable/ic_cart" />
             </LinearLayout>
 
             <!--Other-->
@@ -193,8 +202,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:layout_marginTop="@dimen/margin_item_recycler_view"
-                android:background="@android:color/white">
-            </LinearLayout>
+                android:background="@android:color/white" />
 
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
