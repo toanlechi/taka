@@ -14,10 +14,25 @@ import java.util.List;
 import vn.magik.hometest.R;
 import vn.magik.hometest.models.Services;
 
+/**
+ * Adapter for recycle_view list services.
+ */
 public class ServicesAdapter extends RecyclerView.Adapter<ServicesAdapter.ViewHolder> {
+    /**
+     * List services.
+     */
     private List<Services> servicesList;
+    /**
+     * LayoutInflater object.
+     */
     private LayoutInflater mInflater;
 
+    /**
+     * Constructor.
+     *
+     * @param context      context
+     * @param servicesList list services
+     */
     public ServicesAdapter(Context context, List<Services> servicesList) {
         this.servicesList = servicesList;
         this.mInflater = LayoutInflater.from(context);
@@ -43,14 +58,14 @@ public class ServicesAdapter extends RecyclerView.Adapter<ServicesAdapter.ViewHo
     }
 
 
-    class ViewHolder extends RecyclerView.ViewHolder{
+    class ViewHolder extends RecyclerView.ViewHolder {
         ImageView image;
         TextView name;
-        ViewHolder(View view){
+
+        ViewHolder(View view) {
             super(view);
             image = view.findViewById(R.id.img_services_item);
             name = view.findViewById(R.id.txt_services_name);
-
         }
 
     }

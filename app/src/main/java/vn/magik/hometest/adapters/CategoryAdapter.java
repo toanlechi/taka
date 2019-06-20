@@ -12,10 +12,25 @@ import java.util.List;
 
 import vn.magik.hometest.R;
 
+/**
+ * Adapter of recycle_view category.
+ */
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHolder> {
+    /**
+     * List category.
+     */
     private List<String> categoryList;
+    /**
+     * LayoutInflater object.
+     */
     private LayoutInflater mInflater;
 
+    /**
+     * Constructor.
+     *
+     * @param context      context
+     * @param categoryList list category
+     */
     public CategoryAdapter(Context context, List<String> categoryList) {
         this.categoryList = categoryList;
         this.mInflater = LayoutInflater.from(context);
@@ -39,9 +54,10 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
     }
 
 
-    class ViewHolder extends RecyclerView.ViewHolder{
+    class ViewHolder extends RecyclerView.ViewHolder {
         TextView name;
-        ViewHolder(View view){
+
+        ViewHolder(View view) {
             super(view);
             name = view.findViewById(R.id.txt_title_category);
 

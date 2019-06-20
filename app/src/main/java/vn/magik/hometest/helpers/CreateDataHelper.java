@@ -7,8 +7,18 @@ import java.util.List;
 import vn.magik.hometest.R;
 import vn.magik.hometest.models.Services;
 
+/**
+ * The class simulates retrieving data from the database.
+ */
 public class CreateDataHelper {
-    public static List<Services> getDataServices(){
+    public static final String URL_KEY_HOT = "https://raw.githubusercontent.com/tikivn/android-home-test/v2/keywords.json";
+
+    /**
+     * Get all services.
+     *
+     * @return list services
+     */
+    public static List<Services> getDataServices() {
         List<Services> result = new ArrayList<>();
         result.add(new Services(R.drawable.ic_planes, "Vé máy bay"));
         result.add(new Services(R.drawable.ic_life, "Mua bảo hiểm online"));
@@ -17,42 +27,23 @@ public class CreateDataHelper {
         return result;
     }
 
-    public static List<String> getDataCategory(){
-        List<String> result = new ArrayList<>();
-        result.add("Mẹ & bé");
-        result.add("Sức khoẻ");
-        result.add("Điện gia dụng");
-        result.add("Dịch vụ");
-        result.add("Làm đẹp");
-        result.add("Điện tử");
-        result.add("Xe máy");
-        result.add("Bách hóa");
-        result.add("Nhà sách");
-        result.add("Thể thao");
-        return result;
+    /**
+     * Get all category.
+     *
+     * @return list category
+     */
+    public static List<String> getDataCategory() {
+        return Arrays.asList(
+                "Mẹ & bé",
+                "Sức khoẻ",
+                "Điện gia dụng",
+                "Dịch vụ",
+                "Làm đẹp",
+                "Điện tử",
+                "Xe máy",
+                "Bách hóa",
+                "Nhà sách",
+                "Thể thao"
+        );
     }
-
-    public static List<String> getKeyHot(){
-        return Arrays.asList("xiaomi",
-                "bitis hunter",
-                "bts",
-                "balo",
-                "bitis hunter x",
-                "tai nghe",
-                "harry potter",
-                "anker",
-                "iphone",
-                "balo nữ",
-                "nguyễn nhật ánh",
-                "đắc nhân tâm",
-                "ipad",
-                "senka",
-                "tai nghe bluetooth",
-                "son",
-                "maybelline",
-                "laneige",
-                "kem chống nắng",
-                "anh chính là thanh xuân của em");
-    }
-
 }

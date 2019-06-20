@@ -15,15 +15,34 @@ import java.util.List;
 
 import vn.magik.hometest.R;
 
+/**
+ * Adapter of recycle_view key hot.
+ */
 public class KeyHotAdapter extends RecyclerView.Adapter<KeyHotAdapter.ViewHolder> {
+    /**
+     * List key hot.
+     */
     private List<String> keyHotList;
-    private LayoutInflater mInflater;
+    /**
+     * List color.
+     */
     private List<Integer> listColors;
+    /**
+     * LayoutInflater object.
+     */
+    private LayoutInflater mInflater;
 
+    /**
+     * Constructor.
+     *
+     * @param context    context
+     * @param keyHotList list key hot
+     */
     public KeyHotAdapter(Context context, List<String> keyHotList) {
         this.keyHotList = keyHotList;
         this.mInflater = LayoutInflater.from(context);
-        listColors = Arrays.asList(Color.LTGRAY, Color.BLUE, Color.MAGENTA, Color.DKGRAY, Color.GRAY, Color.GREEN, Color.RED);
+        listColors = Arrays.asList(Color.LTGRAY, Color.BLUE, Color.MAGENTA,
+                Color.DKGRAY, Color.GRAY, Color.GREEN, Color.RED);
     }
 
     @NonNull
@@ -36,9 +55,9 @@ public class KeyHotAdapter extends RecyclerView.Adapter<KeyHotAdapter.ViewHolder
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
         viewHolder.name.setText(keyHotList.get(i));
-        viewHolder.cardView.setCardBackgroundColor(randomColor(i));
+        viewHolder.cardView.setCardBackgroundColor(getColorByIndex(i));
 
-        if (i==keyHotList.size()-1){
+        if (i == keyHotList.size() - 1) {
             viewHolder.viewLast.setVisibility(View.VISIBLE);
         } else {
             viewHolder.viewLast.setVisibility(View.GONE);
@@ -51,11 +70,12 @@ public class KeyHotAdapter extends RecyclerView.Adapter<KeyHotAdapter.ViewHolder
     }
 
 
-    class ViewHolder extends RecyclerView.ViewHolder{
+    class ViewHolder extends RecyclerView.ViewHolder {
         TextView name;
         CardView cardView;
         View viewLast;
-        ViewHolder(View view){
+
+        ViewHolder(View view) {
             super(view);
             name = view.findViewById(R.id.txt_key_word_hot);
             cardView = view.findViewById(R.id.card_view_key_hot);
@@ -63,7 +83,13 @@ public class KeyHotAdapter extends RecyclerView.Adapter<KeyHotAdapter.ViewHolder
         }
     }
 
-    private int randomColor(int index){
-        return listColors.get(index%listColors.size());
+    /**
+     * Get color of item by index.
+     *
+     * @param index index
+     * @return color id
+     */
+    private int getColorByIndex(int index) {
+        return listColors.get(index % listColors.size());
     }
 }

@@ -7,8 +7,10 @@
     <string name="bank_detail">Các ưu đãi cho chủ thẻ ngân hàng</string>
 
     <string name="hot_title">Từ khoá hot</string>
+    <string name="hot_load_error">Không lấy được dữ liệu \nVui lòng kiểm tra kết nối internet</string>
 
     <string name="user_title">Đăng nhập để trải nghiệm tốt nhất</string>
     <string name="user_login">Đăng nhập</string>
     <string name="user_register">Đăng ký</string>
+
 </resources>

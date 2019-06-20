@@ -3,8 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".MainActivity"
-    android:background="#ccc">
+    android:background="@color/colorBackground">
 
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -14,22 +15,24 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
+            <!--Category layout-->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
+                android:layout_height="wrap_content"
                 android:background="@android:color/white">
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/recycler_view_category"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
+                    android:layout_height="wrap_content" />
 
             </LinearLayout>
 
+            <!--Services layout-->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="180dp"
+                android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_marginTop="@dimen/padding_default"
+                android:layout_marginTop="@dimen/margin_item_recycler_view"
                 android:background="@android:color/holo_blue_dark"
                 android:paddingTop="@dimen/padding_default"
                 android:paddingBottom="@dimen/padding_default">
@@ -45,21 +48,25 @@
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/recycler_view_services"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="@dimen/margin_title"/>
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_title"
+                    android:background="?attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"/>
 
             </LinearLayout>
 
-
+            <!--Bank layout-->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
+                android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginTop="@dimen/padding_default"
+                android:layout_marginTop="@dimen/margin_item_recycler_view"
                 android:padding="@dimen/padding_default"
                 android:background="@android:color/white"
                 android:gravity="center"
-                android:clickable="true">
+                android:clickable="true"
+                android:focusable="true">
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
@@ -92,12 +99,12 @@
 
             </LinearLayout>
 
-
+            <!--Keyword hot layout-->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="160dp"
+                android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_marginTop="@dimen/padding_default"
+                android:layout_marginTop="@dimen/margin_item_recycler_view"
                 android:paddingTop="@dimen/padding_default"
                 android:paddingBottom="@dimen/padding_default"
                 android:background="@android:color/white">
@@ -109,19 +116,37 @@
                     android:layout_marginRight="@dimen/padding_default"
                     style="@style/title_card_white"/>
 
+                <TextView
+                    android:id="@+id/txt_status_loading"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="12sp"
+                    android:textStyle="italic"
+                    android:visibility="gone"/>
+
+                <ProgressBar
+                    android:id="@+id/progress_load_keyword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    android:layout_gravity="center"/>
+
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/recycler_view_key_hot"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
                     android:layout_marginTop="@dimen/margin_title"/>
 
             </LinearLayout>
-            
+
+            <!--User layout-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="116dp"
                 android:orientation="horizontal"
-                android:layout_marginTop="@dimen/padding_default"
+                android:layout_marginTop="@dimen/margin_item_recycler_view"
                 android:padding="@dimen/padding_default"
                 android:background="@android:color/white"
                 android:gravity="center">
@@ -146,7 +171,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/user_login"
-                            style="@style/Widget.AppCompat.Button.Colored"/>
+                            style="@style/Widget.AppCompat.Button.Colored"
+                            app:backgroundTint="@color/colorPrimary"/>
 
                         <Button
                             android:layout_width="wrap_content"
@@ -160,22 +186,16 @@
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:src="@drawable/ic_cart"/>
-
             </LinearLayout>
 
-
+            <!--Other-->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_marginTop="@dimen/padding_default"
+                android:layout_height="150dp"
+                android:layout_marginTop="@dimen/margin_item_recycler_view"
                 android:background="@android:color/white">
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
             </LinearLayout>
 
         </LinearLayout>
-
     </android.support.v4.widget.NestedScrollView>
-
 </android.support.constraint.ConstraintLayout>
